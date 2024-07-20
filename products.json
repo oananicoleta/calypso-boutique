@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Sacou 'Denim Element'",
+    "imageUrl": "images/sacou-negru.png",
+    "price": 250,
+    "details": "Un sacou cu catarame și maneci din denim este o piesă vestimentară modernă și stilată, ce aduce un aer fresh și trendy oricărei ținute. Combinând eleganța clasică a culorii cu elemente de design contemporan, precum cataramele și detaliile din denim, acest sacou poate fi purtat atât casual, cu o pereche de blugi și o cămașă simplă, cât și într-un context mai formal, alături de o fustă midi sau o pereche de pantaloni eleganți.",
+    "id": "1"
+  },
+  {
+    "name": "Sacou 'Denim Element'",
+    "imageUrl": "images/sacou-alb.png",
+    "price": 250,
+    "details": "Un sacou cu catarame și maneci din denim este o piesă vestimentară modernă și stilată, ce aduce un aer fresh și trendy oricărei ținute. Combinând eleganța clasică a culorii cu elemente de design contemporan, precum cataramele și detaliile din denim, acest sacou poate fi purtat atât casual, cu o pereche de blugi și o cămașă simplă, cât și într-un context mai formal, alături de o fustă midi sau o pereche de pantaloni eleganți.",
+    "id": "2"
+  },
+  {
+    "name": "Tricou 'Denim Dream'",
+    "imageUrl": "images/tricou.png",
+    "price": 120,
+    "details": "Un tricou perfect pentru zilele toride de vara",
+    "id": "3"
+  },
+  {
+    "name": "Camasa 'Denim Bliss'",
+    "imageUrl": "images/camasa.png",
+    "price": 150,
+    "details": "O camasa potrivita pentru birou, dar si pentru iesiri in oras",
+    "id": "4"
+  },
+  {
+    "name": "Rochie 'Little Black Dress'",
+    "imageUrl": "images/lbd.png",
+    "price": 120,
+    "details": "Rochie stransa in talie si la maneci, de lungime medie, usor satinata.",
+    "id": "5"
+  },
+  {
+    "name": "Rochie 'Bloomy'",
+    "imageUrl": "images/bloomy_verde.png",
+    "price": 100,
+    "details": "Rochie de lungime medie, cu model in lateral. Disponibila in trei culori. ",
+    "id": "6"
+  },
+  {
+    "name": "Rochie 'Bloomy'",
+    "imageUrl": "images/bloomy_pink.png",
+    "price": 100,
+    "details": "Rochie de lungime medie, cu model in lateral. Disponibila in trei culori. ",
+    "id": "7"
+  },
+  {
+    "name": "Rochie 'Bloomy'",
+    "imageUrl": "images/bloomy_neagra.png",
+    "price": 100,
+    "details": "Rochie de lungime medie, cu model in lateral. Disponibila in trei culori. ",
+    "id": "8"
+  },
+  {
+    "name": "Rochie 'Angel'",
+    "imageUrl": "images/angel.png",
+    "price": 120,
+    "details": "Rochie de lungime medie, cu broderie. ",
+    "id": "9"
+  },
+  {
+    "name": "Set 'High on Love'",
+    "imageUrl": "images/red.png",
+    "price": 150,
+    "details": "Set format din rochie si sacou.",
+    "id": "10"
+  },
+  {
+    "name": "Rochie 'Fast and Fabulous'",
+    "imageUrl": "images/f&f_blue.png",
+    "price": 220,
+    "details": "Rochie elastica, disponibila in doua culori vibrante.",
+    "id": "11"
+  },
+  {
+    "name": "Rochie 'Fast and Fabulous'",
+    "imageUrl": "images/f&f_mov.png",
+    "price": 220,
+    "details": "Rochie elastica, disponibila in doua culori vibrante.",
+    "id": "12"
+  },
+  {
+    "name": "Rochie 'Fast and Fabulous'",
+    "imageUrl": "images/f&f_duo.png",
+    "price": 220,
+    "details": "Rochie elastica, disponibila in doua culori vibrante.",
+    "id": "13"
+  },
+  {
+    "name": "Rochie 'Number One Chick'",
+    "imageUrl": "images/no1chick_darkB.png",
+    "price": 150,
+    "details": "Rochie elastica, cu imprimeu, disponibila in doua culori.",
+    "id": "14"
+  },
+  {
+    "name": "Rochie 'Number One Chick'",
+    "imageUrl": "images/no1chick_light.png",
+    "price": 150,
+    "details": "Rochie elastica, cu imprimeu, disponibila in doua culori.",
+    "id": "15"
+  },
+  {
+    "name": "Rochie 'Number One Chick'",
+    "imageUrl": "images/no1chick_dark_duo.png",
+    "price": 150,
+    "details": "Rochie elastica, cu imprimeu, disponibila in doua culori.",
+    "id": "16"
+  },
+  {
+    "name": "Rochie 'Number One Chick'",
+    "imageUrl": "images/no1chick_duo.png",
+    "price": 150,
+    "details": "Rochie elastica, cu imprimeu, disponibila in doua culori.",
+    "id": "17"
+  },
+  {
+    "name": "Rochie 'On Your Mind'",
+    "imageUrl": "images/onyourmind.png",
+    "price": 230,
+    "details": "Rochie eleganta, cu franjuri si nasturi.",
+    "id": "18"
+  },
+  {
+    "name": "Rochie 'Back to School'",
+    "imageUrl": "images/bts_albastra.png",
+    "price": 120,
+    "details": "Rochie casual, de lungime medie, cu cordon, disponibila in doua culori.",
+    "id": "19"
+  },
+  {
+    "name": "Rochie 'Back to School'",
+    "imageUrl": "images/rochie-maro_O.png",
+    "price": 120,
+    "details": "Rochie casual, de lungime medie, cu cordon, disponibila in doua culori.",
+    "id": "20"
+  },
+  {
+    "name": "Rochie 'Sweet Little Thing'",
+    "imageUrl": "images/sweet.png",
+    "price": 140,
+    "details": "Rochie de lungime medie, satinata.",
+    "id": "21"
+  }
+]
