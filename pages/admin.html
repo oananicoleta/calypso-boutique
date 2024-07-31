@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="../CSS/style.css" />
     <title>Calypso Boutique RO</title>
+    <link rel="stylesheet" href="../CSS/admin.css" />
   </head>
   <body>
     <div class="container">
@@ -27,7 +28,37 @@
         <a href="cart.html"> <i class="fa-solid fa-cart-shopping"></i> Cart</a>
       </div>
       <div class="main">
-        <h1>Admin</h1>
+        <h2>Admin Page</h2>
+        <form id="product">
+          <div>
+            <label for="name">Product name</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="price">Price</label>
+            <input type="text" id="price" />
+          </div>
+          <div>
+            <label for="image-url">Image URL</label>
+            <input type="text" id="image-url" />
+          </div>
+          <div>
+            <label for="details">Details</label>
+            <input type="text" id="details" />
+          </div>
+          <button>Save product</button>
+        </form>
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+        </table>
       </div>
       <div class="footer"></div>
     </div>
