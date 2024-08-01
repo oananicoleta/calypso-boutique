@@ -69,3 +69,8 @@ th,
 td {
   padding: 10px;
 }
+
+img {
+  height: 90px;
+  width: 90px;
+}
