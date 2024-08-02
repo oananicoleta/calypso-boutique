@@ -1,0 +1,92 @@
+{
+  "info": {
+    "_postman_id": "6fd75758-7b65-4f9b-b140-902a49e8954a",
+    "name": "Calypso Boutique Products",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36849169"
+  },
+  "item": [
+    {
+      "name": "get all products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://668d7a4f099db4c579f3174e.mockapi.io/products",
+          "protocol": "https",
+          "host": ["668d7a4f099db4c579f3174e", "mockapi", "io"],
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all products by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://668d7a4f099db4c579f3174e.mockapi.io/products",
+          "protocol": "https",
+          "host": ["668d7a4f099db4c579f3174e", "mockapi", "io"],
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add new product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n    \"name\": \"Rochie 'Sweet Little Thing'\",\r\n    \"imageUrl\": \"https://drive.google.com/file/d/1DE0BSkn8rCHKXL9jZB6wMEMyNdoLNdB0/view?usp=drive_link\",\r\n    \"price\": 140,\r\n    \"details\": \"Rochie de lungime medie, satinata.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://668d7a4f099db4c579f3174e.mockapi.io/products",
+          "protocol": "https",
+          "host": ["668d7a4f099db4c579f3174e", "mockapi", "io"],
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update product",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Rochie\", \r\n    \"price\": 180\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://668d7a4f099db4c579f3174e.mockapi.io/products",
+          "protocol": "https",
+          "host": ["668d7a4f099db4c579f3174e", "mockapi", "io"],
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete product",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
