@@ -63,11 +63,14 @@ table,
 th,
 td {
   border: 1px solid var(--secondary-color);
+  box-shadow: 0 1px 1px rgba(97, 32, 110, 0.2);
 }
 
 th,
 td {
   padding: 10px;
+  color: black;
+  font-weight: bold;
 }
 
 img {

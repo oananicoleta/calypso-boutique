@@ -1,4 +1,11 @@
-const url = "https://668d7a4f099db4c579f3174e.mockapi.io/products";
+import { mapProductToAdminTableRow } from "../utils/layout.js";
+import {
+  getProductById,
+  getAllProducts,
+  updateProduct,
+  addNewProduct,
+  deleteProduct,
+} from "../API/product.js";
 
 const productsTableBody = document
   .getElementById("products-table")
@@ -6,40 +13,12 @@ const productsTableBody = document
 
 document.addEventListener("DOMContentLoaded", displayAllProducts);
 
-function getAllProducts() {
-  return fetch(url).then((response) => response.json());
-}
+async function displayAllProducts() {
+  const products = await getAllProducts();
 
-function getProductById(id) {
-  return fetch(`${url}/${id}`).then((response) => response.json());
-}
-
-function displayAllProducts() {
-  getAllProducts().then((products) => {
-    productsTableBody.innerHTML = products
-      .map(
-        (product) => `
-    <tr> 
-        <td>${product.name}</td>
-        <td>${product.price}</td>
-        <td>
-            <img src="../${product.imageUrl}" />
-        </td>
-        <td>
-            <button class="edit-${product.id}">
-                <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-        </td>
-                <td>
-            <button class="delete-${product.id}">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </td>
-    </tr>
-    `
-      )
-      .join("");
-  });
+  productsTableBody.innerHTML = products
+    .map(mapProductToAdminTableRow)
+    .join("");
 }
 
 const form = document.getElementById("product-form");
@@ -54,16 +33,8 @@ let editMode = false;
 let currentEditableProductId;
 
 saveProductButton.addEventListener("click", saveProduct);
-console.log(
-  nameInput,
-  priceInput,
-  imageUrlInput,
-  detailsInput,
-  colourInput,
-  categoryInput
-);
 
-function saveProduct(event) {
+async function saveProduct(event) {
   event.preventDefault();
 
   const product = {
@@ -75,29 +46,36 @@ function saveProduct(event) {
     category: categoryInput.value,
   };
 
-  fetch(editMode ? `${url}/${currentEditableProductId}` : url, {
-    method: editMode ? "PUT" : "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  }).then(() => {
-    form.reset();
-    displayAllProducts();
-    editMode = false;
-  });
+  if (editMode) {
+    const editedProduct = await updateProduct(
+      product,
+      currentEditableProductId
+    );
+    if (editedProduct !== null) {
+      form.reset();
+      displayAllProducts();
+      editMode = false;
+    }
+  } else {
+    const newProduct = await addNewProduct(product);
+    if (newProduct !== null) {
+      form.reset();
+      displayAllProducts();
+    }
+  }
 }
 
 productsTableBody.addEventListener("click", handleActions);
 
-function handleActions(event) {
+async function handleActions(event) {
   const className = event.target.parentElement.className;
   if (className.includes("edit")) {
     const productId = className.split("-")[1];
     editProduct(productId);
   } else if (className.includes("delete")) {
     const productId = className.split("-")[1];
-    deleteProduct(productId);
+    await deleteProduct(productId);
+    await displayAllProducts();
   }
 }
 
@@ -112,13 +90,5 @@ function editProduct(id) {
     categoryInput.value = product.category;
 
     currentEditableProductId = product.id;
-  });
-}
-
-function deleteProduct(id) {
-  fetch(`${url}/${id}`, {
-    method: "DELETE",
-  }).then(() => {
-    displayAllProducts();
   });
 }

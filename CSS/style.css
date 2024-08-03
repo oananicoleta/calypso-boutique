@@ -20,8 +20,9 @@ body {
   color: #f38ba0;
 }
 
-div > a {
-  color: #f38ba0;
+div > a,
+button,
+select {
   cursor: pointer;
   text-decoration: none;
   margin-top: 10px;
@@ -104,4 +105,9 @@ div > a {
 img {
   width: 220px;
   height: 300px;
+  background-color: var(--primary-color);
+}
+
+.bold {
+  font-weight: bold;
 }
