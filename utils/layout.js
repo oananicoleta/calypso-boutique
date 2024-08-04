@@ -5,12 +5,12 @@ export function mapProductToCard(product) {
          <a href="pages/details.html?id=${product.id}"><img src=${product.imageUrl} width="200px"/></a>
          <p class="card-price bold">${product.price} RON</p>
           <div>
-          <select>
+          <select class="option-select">
              <option>S</option>
              <option>M</option>
              <option>L</option>
             </select>
-          <button class="add-to-cart" data-id=${product.id}>
+          <button class="add-to-cart" data-id=${product.id} data-name=${product.name} data-price=${product.price} data-image=${product.imageUrl}>
           <i class="fa-solid fa-cart-shopping"></i></button>
          </div>
          </div>

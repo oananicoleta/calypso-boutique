@@ -57,6 +57,7 @@ button {
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 50px;
 }
 
 table,
@@ -76,4 +77,36 @@ td {
 img {
   height: 90px;
   width: 90px;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 10px;
+  }
+
+  form {
+    gap: 5px;
+    margin-bottom: 30px;
+  }
+  form > div > input {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  form > button {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  table,
+  th,
+  td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  img {
+    height: 60px;
+    width: 60px;
+  }
 }

@@ -1,1 +1,65 @@
-/* cart.css */
+:root {
+  --primary-color: #ffefef;
+  --primary-text-color: black;
+  --secondary-color: #f38ba0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  border: 2px solid #f38ba0;
+  border-radius: 25px;
+  height: fit-content;
+  overflow: hidden;
+  max-width: 900px;
+  min-width: 500px;
+}
+
+.product-cart {
+  height: fit-content;
+  border-radius: 25px;
+  padding: 20px;
+  background: var(--primary-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  color: black;
+  max-width: 900px;
+  min-width: 500px;
+}
+
+.total {
+  height: fit-content;
+  border-radius: 25px;
+  padding: 20px;
+  background: var(--primary-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  color: black;
+  font-weight: bold;
+  max-width: 150px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+@media (max-width: 600px) {
+  .main {
+    margin: 20px;
+    min-width: unset;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .product-cart,
+  .total {
+    min-width: unset;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .total {
+    align-self: center;
+  }
+}

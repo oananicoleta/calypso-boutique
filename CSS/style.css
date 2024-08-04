@@ -111,3 +111,17 @@ img {
 .bold {
   font-weight: bold;
 }
+
+.cart-pic {
+  height: 50px;
+  width: 40px;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .main {
+    margin: 20px;
+    min-width: unset;
+    max-width: 100%;
+  }
+}
