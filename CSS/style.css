@@ -1,127 +1,131 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-  --primary-color: #ffefef;
-  --primary-text-color: black;
-  --secondary-color: #f38ba0;
+	--primary-color: #ffefef;
+	--primary-text-color: black;
+	--secondary-color: #f38ba0;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  background-color: var(--primary-color);
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  color: #f38ba0;
+	background-color: var(--primary-color);
+	font-family: 'Playfair Display', serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: #f38ba0;
 }
 
 div > a,
 button,
 select {
-  cursor: pointer;
-  text-decoration: none;
-  margin-top: 10px;
-  padding: 7px;
-  font-size: 18px;
-  background-color: var(--secondary-color);
-  border: none;
-  border-radius: 10px;
-  color: white;
+	cursor: pointer;
+	text-decoration: none;
+	margin-top: 10px;
+	padding: 7px;
+	font-size: 18px;
+	background-color: var(--secondary-color);
+	border: none;
+	border-radius: 10px;
+	color: white;
 }
 
 .flex {
-  display: flex;
+	display: flex;
 }
 
 .flex-col {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .justify-around {
-  justify-content: space-around;
+	justify-content: space-around;
 }
 
 .justify-between {
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .wrap {
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .items-center {
-  align-items: center;
+	align-items: center;
 }
 
 .p-10 {
-  padding: 10px;
+	padding: 10px;
 }
 
 .gap-50 {
-  gap: 50px;
+	gap: 50px;
 }
 
 .p-50 {
-  padding: 50px;
+	padding: 50px;
 }
 
 .navbar a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 13px;
-  font-style: italic;
+	color: var(--primary-color);
+	text-decoration: none;
+	font-size: 13px;
+	font-style: italic;
 }
 
 .bg-dark {
-  background-color: var(--secondary-color);
+	background-color: var(--secondary-color);
 }
 
 .logo a {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
-  color: var(--primary-color);
-  font-size: 40px;
+	font-family: 'Dancing Script', cursive;
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: var(--primary-color);
+	font-size: 40px;
 }
 
 .product-card {
-  position: relative;
-  max-width: 355px;
-  border-radius: 25px;
-  padding: 20px 30px 30px 30px;
-  background: var(--primary-color);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  margin-right: 20px;
-  color: black;
+	position: relative;
+	max-width: 355px;
+	border-radius: 25px;
+	padding: 20px 30px 30px 30px;
+	background: var(--primary-color);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	margin-right: 20px;
+	color: black;
 }
 
 img {
-  width: 220px;
-  height: 300px;
-  background-color: var(--primary-color);
+	width: 220px;
+	height: 300px;
+	background-color: var(--primary-color);
 }
 
 .bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .cart-pic {
-  height: 50px;
-  width: 40px;
-  border: none;
+	height: 50px;
+	width: 40px;
+	border: none;
 }
 
 @media (max-width: 600px) {
-  .main {
-    margin: 20px;
-    min-width: unset;
-    max-width: 100%;
-  }
+	.main {
+		margin: 20px;
+		min-width: unset;
+		max-width: 100%;
+	}
+}
+
+button:disabled {
+	background-color: gray;
 }
