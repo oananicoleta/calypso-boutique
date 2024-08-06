@@ -26,7 +26,9 @@ async function displayAllProducts() {
 
 			let cart = JSON.parse(localStorage.getItem('cart')) || {};
 			if (cart[productId]) {
-				cart[productId].quantity += 1;
+				if (Number(stock) > cart[productId].quantity) {
+					cart[productId].quantity += 1;
+				}
 			} else {
 				cart[productId] = {
 					imageUrl: imageUrl,
