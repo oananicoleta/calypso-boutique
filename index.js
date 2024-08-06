@@ -14,9 +14,9 @@ async function displayAllProducts() {
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const productCard = button.closest(".product-card");
-      const productId = button.getAttribute("data-id");
       const sizeSelect = productCard.querySelector(".option-select");
       const size = sizeSelect ? sizeSelect.value : null;
+      const productId = button.getAttribute("data-id") + size;
       const price = button.getAttribute("data-price");
       const imageUrl = button.getAttribute("data-image");
       const name = button.getAttribute("data-name");

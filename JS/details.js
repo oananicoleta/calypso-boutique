@@ -23,7 +23,7 @@ async function showProductDetails() {
          <option>M</option>
          <option>L</option>
        </select>
-       <button class="add-to-cart" data-id=${product.id}  data-name=${product.name} data-price=${product.price} data-image=${product.imageUrl}>Adauga in cos</button>
+       <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.imageUrl}">Adauga in cos</button>
       </div>
       <h4 class="align-center padding-15">${product.details}</h4>
     </div>
@@ -35,8 +35,8 @@ async function showProductDetails() {
     button.addEventListener("click", () => {
       const productCard = document.querySelector(".details-card");
       const sizeSelect = productCard.querySelector(".option-select");
-      const size = sizeSelect.value;
-      const productId = button.getAttribute("data-id");
+      const size = sizeSelect ? sizeSelect.value : null;
+      const productId = button.getAttribute("data-id") + size;
       const price = button.getAttribute("data-price");
       const imageUrl = button.getAttribute("data-image");
       const name = button.getAttribute("data-name");

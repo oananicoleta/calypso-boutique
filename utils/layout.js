@@ -10,7 +10,7 @@ export function mapProductToCard(product) {
              <option>M</option>
              <option>L</option>
             </select>
-          <button class="add-to-cart" data-id=${product.id} data-name=${product.name} data-price=${product.price} data-image=${product.imageUrl}>
+          <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.imageUrl}">
           <i class="fa-solid fa-cart-shopping"></i></button>
          </div>
          </div>
