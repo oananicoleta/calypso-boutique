@@ -5,15 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.querySelector(".cart-items");
   const cartTotalContainer = document.querySelector(".cart-total");
 
-  console.log(cart);
-
   function updateCart() {
     cartItemsContainer.innerHTML = "";
     let total = 0;
 
     for (let id in cart) {
       const product = cart[id];
-
+      const { stock, quantity } = product;
       const productCard = document.createElement("div");
       const descreaseDisabled = product.quantity === 1 ? "disabled" : "";
       productCard.className = `product-cart flex justify-between items-center`;
@@ -28,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>
 						<button data-id=${id} ${descreaseDisabled} class="decrease">-</button>
 						<span>${product.quantity}</span>
-						<button data-id=${id} class="increase">+</button>
+						<button data-id=${id} ${
+        Number(stock) === quantity ? "disabled" : ""
+      } class="increase">+</button>
             	</div>
         <span>${product.price * product.quantity} RON</span>
         <button data-id=${id} class="delete">Sterge</button>
@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cartTotalContainer.innerHTML = `Total: ${total} RON`;
       cartTotalContainer.className = `total`;
       cartItemsContainer.appendChild(productCard);
-      console.log(product);
     }
     cartTotalContainer.innerHTML =
       total === 0 ? "Cosul de cumparaturi este gol" : `Total: ${total} RON`;
@@ -48,7 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
   cartItemsContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("increase")) {
       const id = e.target.getAttribute("data-id");
-      cart[id].quantity += 1;
+      const stock = Number(cart[id].stock);
+      if (stock > cart[id].quantity) {
+        cart[id].quantity += 1;
+      }
     } else if (e.target.classList.contains("decrease")) {
       const id = e.target.getAttribute("data-id");
       cart[id].quantity -= 1;

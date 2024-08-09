@@ -15,15 +15,26 @@ async function showProductDetails() {
        <img src="../${product.imageUrl}"/>
        
       </div>
-      <p class="card-price padding-15 align-center dark-pink">${product.price} RON</p>
+      <p class="card-price padding-15 align-center dark-pink">${
+        product.price
+      } RON</p>
       <div class="cart-option padding-15 align-center">
 
        <select class="option-select">
-         <option>S</option>
-         <option>M</option>
-         <option>L</option>
+         ${product.sizes.map(
+           (size) =>
+             `
+                    <option data-stock=${size.stock}>
+                        ${size.size}
+                    </option>
+                    `
+         )}
        </select>
-       <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.imageUrl}">Adauga in cos</button>
+       <button class="add-to-cart" data-id="${product.id}" data-name="${
+    product.name
+  }" data-price="${product.price}" data-image="${
+    product.imageUrl
+  }">Adauga in cos</button>
       </div>
       <h4 class="align-center padding-15">${product.details}</h4>
     </div>
@@ -36,7 +47,9 @@ async function showProductDetails() {
       const productCard = document.querySelector(".details-card");
       const sizeSelect = productCard.querySelector(".option-select");
       const size = sizeSelect ? sizeSelect.value : null;
-      const productId = button.getAttribute("data-id") + size;
+      const stock =
+        sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-stock");
+      const productId = button.getAttribute("data-id") + "-" + size;
       const price = button.getAttribute("data-price");
       const imageUrl = button.getAttribute("data-image");
       const name = button.getAttribute("data-name");
@@ -44,7 +57,9 @@ async function showProductDetails() {
       let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
       if (cart[productId]) {
-        cart[productId].quantity += 1;
+        if (Number(stock) > cart[productId].quantity) {
+          cart[productId].quantity += 1;
+        }
       } else {
         cart[productId] = {
           imageUrl: imageUrl,
@@ -52,6 +67,7 @@ async function showProductDetails() {
           size: size,
           quantity: 1,
           price: price,
+          stock: stock,
         };
       }
       localStorage.setItem("cart", JSON.stringify(cart));

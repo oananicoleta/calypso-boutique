@@ -16,14 +16,18 @@ async function displayAllProducts() {
       const productCard = button.closest(".product-card");
       const sizeSelect = productCard.querySelector(".option-select");
       const size = sizeSelect ? sizeSelect.value : null;
-      const productId = button.getAttribute("data-id") + size;
+      const stock =
+        sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-stock");
+      const productId = button.getAttribute("data-id") + "-" + size;
       const price = button.getAttribute("data-price");
       const imageUrl = button.getAttribute("data-image");
       const name = button.getAttribute("data-name");
 
       let cart = JSON.parse(localStorage.getItem("cart")) || {};
       if (cart[productId]) {
-        cart[productId].quantity += 1;
+        if (Number(stock) > cart[productId].quantity) {
+          cart[productId].quantity += 1;
+        }
       } else {
         cart[productId] = {
           imageUrl: imageUrl,
@@ -31,6 +35,7 @@ async function displayAllProducts() {
           size: size,
           quantity: 1,
           price: price,
+          stock: stock,
         };
       }
       localStorage.setItem("cart", JSON.stringify(cart));
